@@ -1,38 +1,71 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { FireInsuranceImg, HealthInsuranceImg, HomeInsuranceImg, MotorInsuranceImg, ShopInsuranceImg, TravelInsuranceImg } from "../assets/data"
-
+import { useState } from "react";
+import {
+  FireInsuranceImg,
+  HealthInsuranceImg,
+  HomeInsuranceImg,
+  MotorInsuranceImg,
+  ShopInsuranceImg,
+  TravelInsuranceImg,
+  InsurancePartner1,
+  InsurancePartner2,
+  InsurancePartner3,
+  InsurancePartner4,
+  InsurancePartner5,
+  InsurancePartner6,
+  InsurancePartner8,
+  InsurancePartner9,
+} from "../assets/data";
 
 export default function InsurancePartners() {
-  const [selectedCategory, setSelectedCategory] = useState("Health Insurance")
+  const [selectedCategory, setSelectedCategory] = useState("Health Insurance");
 
   const insuranceCategories = [
-    { name: "Health Insurance", icon: HealthInsuranceImg, color: "bg-blue-100 text-blue-600" },
-    { name: "Motor Insurance", icon: MotorInsuranceImg, color: "bg-green-100 text-green-600" },
-    { name: "Travel Insurance", icon: TravelInsuranceImg, color: "bg-purple-100 text-purple-600" },
-    { name: "Shop Insurance", icon: ShopInsuranceImg, color: "bg-indigo-100 text-indigo-600" },
-    { name: "Home Insurance", icon: HomeInsuranceImg, color: "bg-orange-100 text-orange-600" },
-    { name: "Fire Insurance", icon: FireInsuranceImg, color: "bg-red-100 text-red-600" },
-  ]
+    {
+      name: "Health Insurance",
+      icon: HealthInsuranceImg,
+      color: "bg-blue-100 text-blue-600",
+    },
+    {
+      name: "Motor Insurance",
+      icon: MotorInsuranceImg,
+      color: "bg-green-100 text-green-600",
+    },
+    {
+      name: "Travel Insurance",
+      icon: TravelInsuranceImg,
+      color: "bg-purple-100 text-purple-600",
+    },
+    {
+      name: "Shop Insurance",
+      icon: ShopInsuranceImg,
+      color: "bg-indigo-100 text-indigo-600",
+    },
+    {
+      name: "Home Insurance",
+      icon: HomeInsuranceImg,
+      color: "bg-orange-100 text-orange-600",
+    },
+    {
+      name: "Fire Insurance",
+      icon: FireInsuranceImg,
+      color: "bg-red-100 text-red-600",
+    },
+  ];
 
   const partnerLogos = [
-    { name: "Oriental Insurance", logo: "/placeholder.svg?height=80&width=120" },
-    { name: "Universal Sompo", logo: "/placeholder.svg?height=80&width=120" },
-    { name: "Bajaj Allianz", logo: "/placeholder.svg?height=80&width=120" },
-    { name: "Tata AIG", logo: "/placeholder.svg?height=80&width=120" },
-    { name: "SBI General", logo: "/placeholder.svg?height=80&width=120" },
-    { name: "Royal Sundaram", logo: "/placeholder.svg?height=80&width=120" },
-    { name: "Reliance General", logo: "/placeholder.svg?height=80&width=120" },
-    { name: "New India Assurance", logo: "/placeholder.svg?height=80&width=120" },
-    { name: "Liberty General", logo: "/placeholder.svg?height=80&width=120" },
-    { name: "IFFCO-Tokio", logo: "/placeholder.svg?height=80&width=120" },
-    { name: "ICICI Lombard", logo: "/placeholder.svg?height=80&width=120" },
-    { name: "Reliance General", logo: "/placeholder.svg?height=80&width=120" },
-    { name: "SBI General", logo: "/placeholder.svg?height=80&width=120" },
-    { name: "HDFC ERGO", logo: "/placeholder.svg?height=80&width=120" },
-    { name: "Universal Sompo", logo: "/placeholder.svg?height=80&width=120" },
-  ]
+    { name: "Oriental Insurance", logo: InsurancePartner5 },
+    { name: "Universal Sompo", logo: InsurancePartner8 },
+    { name: "National Insurance", logo: InsurancePartner3 },
+    { name: "Tata AIG", logo: InsurancePartner2 },
+    { name: "SBI General", logo: InsurancePartner6 },
+    { name: "Reliance General", logo: InsurancePartner1 },
+    { name: "ICICI Lombard", logo: InsurancePartner9 },
+    { name: "Reliance General", logo: InsurancePartner1 },
+    { name: "SBI General", logo: InsurancePartner6 },
+    { name: "HDFC ERGO", logo: InsurancePartner4 },
+  ];
 
   return (
     <div className="min-h-screen py-8">
@@ -40,7 +73,8 @@ export default function InsurancePartners() {
         {/* Header */}
         <div className="text-center mb-12">
           <h1 className="text-4xl font-semibold mb-4">
-            <span className="text-orange-500">Insurance</span> <span className="text-gray-900">Partner</span>
+            <span className="text-orange-500">Insurance</span>{" "}
+            <span className="text-gray-900">Partner</span>
           </h1>
         </div>
 
@@ -50,8 +84,7 @@ export default function InsurancePartners() {
             <div className="bg-white rounded-2xl shadow-lg border border-gray-200 p-6">
               <div className="">
                 {insuranceCategories.map((category, index) => {
-                  
-                  const isSelected = selectedCategory === category.name
+                  const isSelected = selectedCategory === category.name;
 
                   return (
                     <button
@@ -64,11 +97,17 @@ export default function InsurancePartners() {
                       }`}
                     >
                       <div className={`p-3`}>
-                        <img src={category.icon} alt={category.name} className="w-14" />
-                    </div>
-                      <span className="text-lg font-semibold text-gray-800">{category.name}</span>
+                        <img
+                          src={category.icon}
+                          alt={category.name}
+                          className="w-14"
+                        />
+                      </div>
+                      <span className="text-lg font-semibold text-gray-800">
+                        {category.name}
+                      </span>
                     </button>
-                  )
+                  );
                 })}
               </div>
             </div>
@@ -96,15 +135,19 @@ export default function InsurancePartners() {
             {/* Additional Info */}
             <div className="mt-6 text-center">
               <p className="text-gray-600">
-                Showing partners for <span className="font-semibold text-blue-600">{selectedCategory}</span>
+                Showing partners for{" "}
+                <span className="font-semibold text-blue-600">
+                  {selectedCategory}
+                </span>
               </p>
               <p className="text-sm text-gray-500 mt-2">
-                We work with {partnerLogos.length}+ trusted insurance partners to provide you the best coverage options
+                We work with {partnerLogos.length}+ trusted insurance partners
+                to provide you the best coverage options
               </p>
             </div>
           </div>
         </div>
       </div>
     </div>
-  )
+  );
 }

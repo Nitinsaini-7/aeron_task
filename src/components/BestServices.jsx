@@ -1,5 +1,8 @@
 
 import { Headphones, Edit3, CreditCard } from "lucide-react"
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 export default function BestServices() {
   const servicesData = [
@@ -28,6 +31,10 @@ export default function BestServices() {
       iconBg: "bg-gray-100",
     },
   ]
+  useEffect(() => {
+  AOS.init();
+  
+}, []);
 
   return (
     <section className="py-5">
@@ -46,7 +53,7 @@ export default function BestServices() {
             const IconComponent = service.icon
 
             return (
-              <div key={service.id} className="group">
+              <div key={service.id} className="group" data-aos="fade-up">
                 {/* Service Card */}
                 <div className="bg-white p-5 rounded-lg shadow-md hover:shadow-xl cursor-pointer transition-shadow duration-300">
                   {/* Icon and Title Container */}

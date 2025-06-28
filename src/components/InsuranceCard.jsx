@@ -1,8 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { insuranceProducts } from "../assets/data";
 import { ArrowRight } from "lucide-react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const InsuranceCard = () => {
+  useEffect(() => {
+    AOS.init();
+    
+  }, []);
   return (
     <>
       <div className="">
@@ -72,6 +78,7 @@ const InsuranceCard = () => {
             {insuranceProducts.map((item, index) => (
               <div
                 key={index}
+                data-aos="fade-up"
                 className="bg-white flex rounded-2xl p-4 shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer transform hover:scale-105 group"
               >
                 <div>

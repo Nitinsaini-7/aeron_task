@@ -1,8 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { howWeWorkData } from "../assets/data";
 import CostCard from "./CostCard";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const HowWeWorks = () => {
+  useEffect(() => {
+    AOS.init();
+    
+  }, []);
   return (
     <div className="">
       <div className="py-5 px-10 md:px-20">
@@ -14,7 +20,7 @@ const HowWeWorks = () => {
         </div>
         <div className=" grid md:grid-cols-3 gap-8">
           {howWeWorkData.map((item, index) => (
-            <div key={index} className="p-2">
+            <div key={index} data-aos="fade-up" className="p-2">
               <div className=" flex items-center justify-center">
                 <img src={item.img} alt="" className="w-28 h-28" />
               </div>

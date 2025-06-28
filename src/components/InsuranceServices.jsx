@@ -1,8 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { insuranceServices } from "../assets/data";
 import { ArrowRight } from "lucide-react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const InsuranceServices = () => {
+  useEffect(() => {
+    AOS.init();
+    
+  }, []);
   return (
       <div className="text-center py-5 px-10 bg-gray-50">
         <h1 className="text-4xl font-semibold mb-10">
@@ -11,7 +17,7 @@ const InsuranceServices = () => {
 
         <div className="grid md:grid-cols-3 gap-8  md:p-10">
           {insuranceServices.map((item, index) => (
-            <div key={index} className=" shadow-lg rounded-md p-6 bg-white">
+            <div key={index} data-aos="fade-up" className=" shadow-lg rounded-md p-6 bg-white">
               <div className="bg-red-50 p-2 flex items-center justify-center">
                 <img src={item.img} alt="" className="w-full h-52" />
               </div>

@@ -1,6 +1,9 @@
 "use client"
 
 import { Users, Search, Tag, LifeBuoy } from "lucide-react"
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 export default function WhyDemo() {
   const whyDemoData = {
@@ -48,6 +51,11 @@ export default function WhyDemo() {
     ],
   }
 
+  useEffect(() => {
+    AOS.init();
+    
+  }, []);
+
   return (
     <section className="py-16 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -67,7 +75,7 @@ export default function WhyDemo() {
             const IconComponent = feature.icon
 
             return (
-              <div key={feature.id} className="group ">
+              <div key={feature.id} className="group " data-aos="fade-up">
                 <div className="flex items-start space-x-6 p-6 rounded-lg bg-white">
                   {/* Icon */}
                   <div className={`p-4 rounded-full ${feature.iconBg} flex-shrink-0`}>
