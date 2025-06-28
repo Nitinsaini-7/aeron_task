@@ -52,7 +52,9 @@ export default function WhyDemo() {
   }
 
   useEffect(() => {
-    AOS.init();
+    AOS.init({
+      duration: 700,
+    });
     
   }, []);
 

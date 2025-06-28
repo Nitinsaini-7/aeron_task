@@ -32,7 +32,9 @@ export default function BestServices() {
     },
   ]
   useEffect(() => {
-  AOS.init();
+  AOS.init({
+    duration: 700,
+  });
   
 }, []);
 

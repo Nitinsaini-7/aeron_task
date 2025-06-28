@@ -5,7 +5,9 @@ import "aos/dist/aos.css";
 
 const CostCard = () => {
   useEffect(() => {
-    AOS.init();
+    AOS.init({
+      duration: 700,
+    });
   }, []);
   return (
     <div className=" bg-gray-50 my-10 md:px-20 py-10">

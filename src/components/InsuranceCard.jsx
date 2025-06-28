@@ -6,8 +6,9 @@ import "aos/dist/aos.css";
 
 const InsuranceCard = () => {
   useEffect(() => {
-    AOS.init();
-    
+    AOS.init({
+      duration: 700,
+    });
   }, []);
   return (
     <>
